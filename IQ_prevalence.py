@@ -87,7 +87,7 @@ pre_filt = ( float(config['DEFAULT']['pre_filt0']),
              float(config['DEFAULT']['pre_filt2']), 
              float(config['DEFAULT']['pre_filt3']) )#0.01, .02, 90, 100.)
 
-event_thresh = float(config['DEFAULT']['event_thresh']) # nm/s or other seismic velocity unit.  Choose the lowest possible amplitude threshold 
+event_thresh = eval(config['DEFAULT']['event_thresh']) # nm/s or other seismic velocity unit.  Choose the lowest possible amplitude threshold 
                          #      that is definitively an event, not background amplitude.  Amplitudes greater than
                          #      this threshold will be considered an event.
 noise_pctile_thresh = float(config['DEFAULT']['noise_pctile_thresh']) # Choose the noise percentile amplitude that is not affected by events.

@@ -29,12 +29,14 @@ pre_filt2: 230.
 pre_filt3: 250.
 
 # Two key settings for icequake and noise detection.
-event_thresh: 0.3 / 1e6  # nm/s or other seismic velocity unit.  Choose the lowest possible amplitude threshold 
-                         #      that is definitively an event, not background amplitude.  Amplitudes greater than
-                         #      this threshold will be considered an event.
-noise_pctile_thresh:  20 # Choose the noise percentile amplitude that is not affected by events.
-                         #      This percentile amplitude is considered representative of background noise levels
-                         #      and may be considered to result from subglacial hydrology.
+event_thresh: 0.3 / 1e6
+	# nm/s or other seismic velocity unit.  Choose the lowest possible amplitude threshold 
+        #      that is definitively an event, not background amplitude.  Amplitudes greater than
+        #      this threshold will be considered an event.
+noise_pctile_thresh:  20
+	# Choose the noise percentile amplitude that is not affected by events.
+        #      This percentile amplitude is considered representative of background noise levels
+        #      and may be considered to result from subglacial hydrology.
 
 
 # times in form yyyy-mm-dd

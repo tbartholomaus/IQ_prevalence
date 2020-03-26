@@ -1,0 +1,42 @@
+# Parameter file for use with IQ_prevalence calculation
+
+[DEFAULT]
+# data_source should be 'local' or 'ETH' or 'IRIS'
+data_source: local
+# if data_source is not local, then the data_dir and resp_file parameters below are irrelevant.  However, they should be retained in the par file none-the-less.
+
+network: XX
+station: SELC
+channel: HHZ
+
+# include full paths to data, with final forward slash: /
+# script assumes miniseed files are organized in data_dir + station/
+data_dir = /data/stor/basic_data/seismic_data/day_vols/MoVE/
+
+# include full path to resp file
+resp_file = /data/stor/basic_data/seismic_data/day_vols/MoVE/Resp/MoVE_station.xml
+
+# full path to the directory in which the output pickle file should be saved
+out_dir = /data/stor/proj/MoVE/IQ_occurrence/
+
+# durations in seconds, and overlap in ratios
+pp_coarse_duration = 600.0
+pp_coarse_overlap = 0.5
+
+pre_filt0: 0.1
+pre_filt1: 0.2
+pre_filt2: 230.
+pre_filt3: 250.
+
+# Two key settings for icequake and noise detection.
+event_thresh: 0.3 / 1e6  # nm/s or other seismic velocity unit.  Choose the lowest possible amplitude threshold 
+                         #      that is definitively an event, not background amplitude.  Amplitudes greater than
+                         #      this threshold will be considered an event.
+noise_pctile_thresh:  20 # Choose the noise percentile amplitude that is not affected by events.
+                         #      This percentile amplitude is considered representative of background noise levels
+                         #      and may be considered to result from subglacial hydrology.
+
+
+# times in form yyyy-mm-dd
+t_start = 2017-06-29
+t_end = 2017-07-10
